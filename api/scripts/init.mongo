@@ -1,0 +1,11 @@
+db.mothernode.remove({});
+const mothernodedb = [{
+        name: "test"
+    },
+];
+db.mothernode.insertMany(mothernodedb);
+const count = db.mothernode.count();
+print('Inserted ', count, 'items');
+
+db.counters.remove({ _id: 'products' });
+db.counters.insert({ _id: 'mothernode', current: count });
